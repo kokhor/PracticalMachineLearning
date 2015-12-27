@@ -1,0 +1,101 @@
+---
+title: "Practical Machine Learning Course Project"
+author: "kokhor"
+date: "December 26, 2015"
+output: html_document
+---
+
+# Executive Summary
+
+The goal of this project is to predict the way in which six participants were asked to do the exercise. This is the "classe" variable in the training set. A report will be created to describe how we built our model, how we used cross validation, and to judge what is the expected out of sample error, and why we concluded that Random Forest is the best choice and apply this modelas prediction model to predict 20 different test cases. 
+
+# Data Processing
+### Getting Data
+```{r Getting Data}
+
+urltrain <- "http://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv"
+
+download.file(urltrain, destfile = "pml-training.csv" )
+
+urltest <- "http://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv"
+download.file(urltest, destfile = "pml-testing.csv" )
+
+Trainingdata <- read.csv("pml-training.csv", na.strings = c("NA","#DIV/0!",""))
+Testingdata <- read.csv("pml-testing.csv", na.strings = c("NA","#DIV/0!",""))
+
+```
+```{r Load library caret}
+library(caret)
+
+```
+### Data Cleansing
+```{r Cleaning and Tidy Data}
+
+# remove columns with nearZeroVar, NA, null 
+zval <- nearZeroVar(Trainingdata, saveMetrics=TRUE)
+Train1 <- Trainingdata[, zval$nzv==FALSE]
+
+Train1 <-   Train1[, names(Train1)[sapply(Train1, function(x)
+             !(any(is.na(x) | x == "")))]]
+# remove 1st column, serial numbers
+Train1 <- Train1[,-1]
+
+```
+```{r Transform Testingdata}
+
+map1 <- colnames(Train1[, -58])  
+Testingdata <- Testingdata[map1]
+
+for (i in 1:length(Testingdata) ) {
+    for(j in 1:length(Train1)) {
+        if( length( grep(names(Train1[i]), names(Testingdata)[j]) ) == 1)  {
+            class(Testingdata[j]) <- class(Train1[i])
+        }      
+    }      
+}
+
+Testingdata <- rbind(Train1[2, -58] , Testingdata)
+Testingdata <- Testingdata[-1,]
+```
+
+### Data is splitted into 2 partitions for Cross Validation 
+```{r Create Data Partition of Train1 }
+# Create Data Partition of 60% for training and 40% for testing on the cleaned and tidy data, as we have a medium to large sample size data.
+set.seed(123)
+inTrain <- createDataPartition(Train1$classe, p=0.6, list=FALSE)
+Training <- Train1[inTrain, ]
+Testing <- Train1[-inTrain, ]
+```
+
+# Model Selection
+### Creating the predictive model by using Random Forest
+```{r load random forest library}
+library(randomForest)
+set.seed(123)
+rfFit <- randomForest(classe ~ ., data = Training)
+predictrf <- predict(rfFit, Testing, type = "class")
+confsMat <- confusionMatrix(predictrf, Testing$classe)
+confsMat
+```
+### Model Validation
+### The above predictive model by using Random Forest give Accuracy : 0.9989 and out of sample error is therefore 1-0.9989= 0.0011 or 0.11%
+
+# Predicting Results on Test Cases
+```{r Answers}
+Answers <- predict(rfFit, Testingdata)
+print(as.data.frame(Answers))
+```
+
+```{r pml_write_files}
+pml_write_files = function(x){
+  n = length(x)
+  for(i in 1:n){
+    filename = paste0("problem_id_",i,".txt")
+    write.table(x[i],file=filename,quote=FALSE,row.names=FALSE,col.names=FALSE)
+  }
+}
+pml_write_files(Answers)
+```
+
+
+
