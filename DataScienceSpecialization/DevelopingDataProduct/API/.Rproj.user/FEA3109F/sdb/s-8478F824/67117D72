@@ -1,0 +1,25 @@
+{
+    "contents" : "",
+    "created" : 1454229672209.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "67117D72",
+    "lastKnownWriteTime" : 7011605692497750387,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "nxazotzj81",
+        "caption" : "banting",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=banting&cache_key=nxazotzj81",
+        "displayedObservations" : 13296,
+        "environment" : "",
+        "object" : "banting",
+        "totalObservations" : 13296,
+        "variables" : 6
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

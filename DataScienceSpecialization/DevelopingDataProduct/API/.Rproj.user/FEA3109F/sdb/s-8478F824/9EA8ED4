@@ -1,0 +1,17 @@
+{
+    "contents" : "API\n========================================================\nauthor: NgKokHor\ndate: February 6, 2016\n\nIntroduction\n========================================================\n\nProject - An Application to Reactively View Air Pollutant Index (API) Data\n\n- A typical town in east coast of Malaysia, Kemaman \n\n- The API capture data by the hour from 01-08-2013 till 05-02-2015\n\n- original unprocessed data can be obtained from http://data.gov.my/view.php?view=280\n\nThe Application\n========================================================\n- A Web Application develop using Shiny\n\n- An Application to plot API reading by Year and Month\n\n- IE or Google Chrome to access https://kokhor.shinyapps.io/APPNAME/\n\n\nRun the Application\n========================================================\n\n- select year and month between 2013 August to 2015 February \n\n- Reactively view the daily(24 hours) trend of API data\n```{r, echo=FALSE}\nkemaman <- read.csv(\"kemaman.csv\")\n```\n\n```{r, echo=FALSE}\nhead(kemaman)\n```\n\nThe Sample Output\n========================================================\n\n![alt text](MyAppOutput.png)\n\n\n",
+    "created" : 1454688003698.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4041461577",
+    "id" : "9EA8ED4",
+    "lastKnownWriteTime" : 1455345721,
+    "path" : "C:/Users/Kok Hor/DataScienceSpecialization/DevelopingDataProduct/API/API.Rpres",
+    "project_path" : "API.Rpres",
+    "properties" : {
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "type" : "r_presentation"
+}

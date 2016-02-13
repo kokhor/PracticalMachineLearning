@@ -1,0 +1,25 @@
+{
+    "contents" : "",
+    "created" : 1454392912881.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "BE1234DD",
+    "lastKnownWriteTime" : 7011605692497750387,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "1d3wn8dn27",
+        "caption" : "kemaman",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=kemaman&cache_key=1d3wn8dn27",
+        "displayedObservations" : 13296,
+        "environment" : "",
+        "object" : "kemaman",
+        "totalObservations" : 13296,
+        "variables" : 6
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

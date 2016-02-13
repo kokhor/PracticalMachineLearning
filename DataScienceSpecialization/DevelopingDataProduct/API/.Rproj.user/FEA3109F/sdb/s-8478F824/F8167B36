@@ -1,0 +1,17 @@
+{
+    "contents" : "\n# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\nlibrary(shiny)\nlibrary(lubridate)\nlibrary(ggplot2)\nshinyServer( function(input, output) {\n  output$plot1 <- renderPlot({\n    selected.data <- kemaman[(month(kemaman$Date)==input$month & year(kemaman$Date)==input$year),]\n    ggplot(data=selected.data, aes(x=selected.data$Hour, y=selected.data$API))+geom_smooth(color=\"blue\")+labs(x=\"Hour\",y=\"API Reading\")\n  })\n}\n)\n",
+    "created" : 1454214755186.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3527196497",
+    "id" : "F8167B36",
+    "lastKnownWriteTime" : 1455344960,
+    "path" : "C:/Users/Kok Hor/DataScienceSpecialization/DevelopingDataProduct/API/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

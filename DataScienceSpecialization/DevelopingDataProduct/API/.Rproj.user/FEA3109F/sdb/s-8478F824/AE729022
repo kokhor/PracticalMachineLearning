@@ -1,0 +1,17 @@
+{
+    "contents" : "library(shiny)\nlibrary(lubridate)\nlibrary(ggplot2)\nkemaman <- read.csv(\"kemaman.csv\")\n\nshinyUI( fluidPage(\n  headerPanel(\"Air Pollutant Index 2013(Aug)-2015(Feb)\"),\n  sidebarPanel(\n    \"Please select between Aug 2013 to Feb 2015(inclusive) to reactively view API Reading\",\n    selectInput(\"year\", label= \"Select Year\",selected=2013, choices=c(2013,2014,2015)),\n    selectInput(\"month\", label= \"Select Month\",selected=8, choices=c(1,2,3,4,5,6,7,8,9,10,11,12)) \n  ),\n  mainPanel(\n    h3(\"Air Pollutant Index at Kemaman\"),\n    plotOutput(\"plot1\")\n  ))\n)",
+    "created" : 1454214754917.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4041875553",
+    "id" : "AE729022",
+    "lastKnownWriteTime" : 1455345230,
+    "path" : "C:/Users/Kok Hor/DataScienceSpecialization/DevelopingDataProduct/API/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

@@ -1,0 +1,9 @@
+name: APPNAME
+account: kokhor
+server: shinyapps.io
+appId: 81848
+bundleId: 371993
+url: https://kokhor.shinyapps.io/APPNAME/
+when: 1455345353.9231
+asMultiple: FALSE
+asStatic: FALSE

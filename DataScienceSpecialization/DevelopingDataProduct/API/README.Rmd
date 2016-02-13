@@ -1,0 +1,9 @@
+---
+title: "Developing Data Product Project - An Application to Reactively view API Data  "
+author: "kokhor"
+date: "February 5, 2016"
+output: html_document
+---
+
+# Introduction
+The purpose of this documentation is to guide users to use the application designed to reactively view API data collected at area where Air Pollutant Index is high which is hazadous to human population live in the area. The area 

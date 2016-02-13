@@ -1,0 +1,18 @@
+{
+    "contents" : "---\ntitle: \"Developing Data Product Project - An Application to Reactively View API Data  \"\n\n\n---\n\n# Introduction\n\nThe purpose of this documentation is to guide users to use the application designed to reactively view API data collected at area where Air Pollutant Index(API) is high which is hazadous to the health of human population live in the area of South East Asia, specifically in Malaysia. Most of the areas where API data were collected are selected towns and cities in Penisular Malaysia. \n\n# Data Collection and Processing\n\nA typical town in east coast of Malaysia, Kemaman, is chosen for API data collection.\nFor this project,the API Data kemaman.csv, was downloaded, filtered and processed in order to test the above Application. \n\n## Notes :\n• The original unprocessed data can be obtained from http://data.gov.my/view.php?view=280\n\n• The API capture data by the hour from 01-08-2013 till 05-02-2015\n\n# The Application\n\n• A Web Application develop using Shiny\n\n• An Application to plot API reading by Year and Month\n\n• Using an Internet browser (IE or Google Chrome) to access https://kokhor.shinyapps.io/APPNAME/\n\n• Reactively select year and month between 2013 August to 2015 February inclusive, to view the daily(24 hours) trend of API ",
+    "created" : 1454652373921.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3309596403",
+    "id" : "89A59DBA",
+    "lastKnownWriteTime" : 1454840652,
+    "path" : "C:/Users/Kok Hor/DataScienceSpecialization/DevelopingDataProduct/API/README.md",
+    "project_path" : "README.md",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "type" : "markdown"
+}
